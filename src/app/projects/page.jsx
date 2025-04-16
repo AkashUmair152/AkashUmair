@@ -2,28 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/components/Footer';
-
-// Example static data (you can replace this with actual data or props)
-const projects = [
-  {
-    id: 1,
-    slug: 'project-one',
-    title: 'Project One',
-    complete_date: '2024-12-01',
-    hero_image: {
-      url: '/images/sample1.jpg'
-    }
-  },
-  {
-    id: 2,
-    slug: 'project-two',
-    title: 'Project Two',
-    complete_date: '2025-01-15',
-    hero_image: {
-      url: '/images/sample2.jpg'
-    }
-  }
-];
+import projects from "../data/data.js";
 
 export default function Projects() {
   return (
@@ -33,7 +12,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <Link 
-              key={project.id} 
+              key={project.slug} 
               href={`/projects/${project.slug}`} 
               passHref
             >
